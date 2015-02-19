@@ -3,8 +3,8 @@ define([
   'underscore',
   'backbone',
   'views/file/FilesView',
-  'text!templates/home/homeTemplate.html'
-], function($, _, Backbone, FilesView, homeTemplate){
+  'text!templates/home/HomeTemplate.html'
+], function($, _, Backbone, FilesView, tpl){
 
   var HomeView = Backbone.View.extend({
     el: $("#page"),
@@ -13,12 +13,12 @@ define([
       
       $('.menu li').removeClass('active');
       $('.menu li a[href="#"]').parent().addClass('active');
-      this.$el.html(homeTemplate);
+      this.$el.html(tpl);
 
       var filesView = new FilesView();
-      
-      // console.log('asd', filesView.render());
- 
+      filesView.render();
+      return this;
+
     }
 
   });

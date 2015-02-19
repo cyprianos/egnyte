@@ -19,6 +19,7 @@
     "jquery":null,
     "backbone-amd": null,
     "underscore-amd": null,
-    "requirejs": null
+    "requirejs": null,
+    "layoutmanager":null
   }
 }
