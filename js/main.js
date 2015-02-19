@@ -1,10 +1,9 @@
 require.config({
   paths: {
-    jquery: 'libs/jquery/jquery-min',
-    underscore: 'libs/underscore/underscore-min',
-    backbone: 'libs/backbone/backbone-min',
-    templates: '../templates',
-    layoutmanager: 'libs/backbone.layoutmanager/backbone.layoutmanager'
+    jquery: 'vendor/jquery/dist/jquery',
+    underscore: 'vendor/underscore-amd/underscore',
+    backbone: 'vendor/backbone-amd/backbone',
+    templates: '../templates'
   }
 
 });

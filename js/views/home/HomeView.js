@@ -16,7 +16,8 @@ define([
       this.$el.html(homeTemplate);
 
       var filesView = new FilesView();
-      filesView.render();
+      
+      // console.log('asd', filesView.render());
  
     }
 

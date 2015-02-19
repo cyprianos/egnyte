@@ -1,0 +1,24 @@
+{
+  "name": "egnyte",
+  "version": "0.0.1",
+  "authors": [
+    "cgepfert <cgepfert@gmail.com>"
+  ],
+  "description": "egnyte",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/scripts/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery":null,
+    "backbone-amd": null,
+    "underscore-amd": null,
+    "requirejs": null
+  }
+}
