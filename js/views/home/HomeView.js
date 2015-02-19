@@ -2,9 +2,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/sidebar/SidebarView',
+  'views/file/FilesView',
   'text!templates/home/homeTemplate.html'
-], function($, _, Backbone, SidebarView, homeTemplate){
+], function($, _, Backbone, FilesView, homeTemplate){
 
   var HomeView = Backbone.View.extend({
     el: $("#page"),
@@ -15,8 +15,8 @@ define([
       $('.menu li a[href="#"]').parent().addClass('active');
       this.$el.html(homeTemplate);
 
-      var sidebarView = new SidebarView();
-      sidebarView.render();
+      var filesView = new FilesView();
+      filesView.render();
  
     }
 
