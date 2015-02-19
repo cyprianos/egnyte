@@ -4,6 +4,7 @@ require.config({
     underscore: 'vendor/underscore-amd/underscore',
     backbone: 'vendor/backbone-amd/backbone',
     layoutmanager: 'vendor/layoutmanager/backbone.layoutmanager',
+    // marionette: 'vendor/marionette/lib/core/backbone.marionette',
     templates: '../templates'
   }
 

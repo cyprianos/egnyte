@@ -2,24 +2,20 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/file/FilesTemplate.html'
-], function($, _, Backbone, tpl){
+  'text!templates/file/FilesTemplate.html',
+   'layoutmanager'
+], function($, _, Backbone, tpl, LayoutManager){
 	var FilesView = Backbone.View.extend({
-		el: $('#filesview'),
+		template: '#tpl-list'
 		// events: {
 		// 	'click': 'click'
 		// },
 		// click: function() {
 		// 	console.log('asdasd');
 		// },
-		render: function() {
-			console.log(tpl);
-			this.$el.html(tpl);
-			console.log(this.el);
-			console.log(this);
-			$("#filesview").append(this.$el);
-			return this; 
-		}
+		// render: function() {
+		// 	this.$el.append(tpl);
+		// }
 	});
   return FilesView;
 });

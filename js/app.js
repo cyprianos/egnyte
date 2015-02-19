@@ -7,7 +7,10 @@ define([
   'layoutmanager',
 ], function($, _, Backbone, Router, Layout){
   var initialize = function(){
-    console.log('isLayoutLoaded', Layout);
+    Backbone.Layout.configure({
+      manage:true
+    });
+    // console.log(Layout);
     // Pass in our Router module and call it's initialize function
     Router.initialize();
   };

@@ -19,26 +19,22 @@
 </head>
 <body>
 
-  <div id="container">
-    <div id="logo">
-      <h1>Egnyte</h1>
-    </div>
-
-    <div class="menu navbar">
-      <div class="navbar-inner">
-        <ul class="nav">
-          <li><a href="#">Home</a></li>
-          <li ><a href="#/projects" >Projects</a></li>
-        </ul>
-      </div>
-    </div>
-
-
-    <div id="page">
-      Loading....
-    </div>
-    <div id="footer"></div>
+  <div id="w">
+  	
   </div> 
+  <script type="layout" id="layout">
+	<div id="logo">
+		<h1>Egnyte</h1>
+	</div>
+
+	<div id="list"></div>
+  </script>
+  <script type="template" id="tpl-list">
+  	<ul>
+  		<li>el1</li>
+  		<li>el2</li>
+  	</ul>
+  </script>
   <script data-main="js/main" src="js/vendor/requirejs/require.js"></script>
 </body>
 </html>

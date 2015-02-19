@@ -8,12 +8,13 @@ define([
 
   var HomeView = Backbone.View.extend({
     el: $("#page"),
+    template: _.template(tpl),
 
     render: function(){
       
-      $('.menu li').removeClass('active');
-      $('.menu li a[href="#"]').parent().addClass('active');
-      this.$el.html(tpl);
+      // $('.menu li').removeClass('active');
+      // $('.menu li a[href="#"]').parent().addClass('active');
+      // this.$el.html(tpl);
 
       var filesView = new FilesView();
       filesView.render();

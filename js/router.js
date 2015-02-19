@@ -3,13 +3,35 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/home/HomeView',
-], function($, _, Backbone, HomeView, ProjectsView, ContributorsView, FooterView) {
+  'views/file/FilesView'
+], function($, _, Backbone, FilesView) {
   
   var AppRouter = Backbone.Router.extend({
+    initialize: function() {
+      
+    },
+   
     routes: {
       // Default
-      '*actions': 'defaultAction'
+      '*actions': 'index'
+    },
+    index: function() {
+      var layout = new Backbone.Layout({
+        template: "#layout",
+        views: {
+          "#list": new FilesView()
+        }
+      });
+      // layout.render();
+
+      // layout.$el.appendTo('#w');
+      // layout.$el.appendTo('#w');
+      layout.render();
+
+      $("#w").empty().append(layout.el);
+
+
+      // layout.render();
     }
   });
   
@@ -17,12 +39,12 @@ define([
 
     var app_router = new AppRouter;
 
-    app_router.on('route:defaultAction', function (actions) {
+    // app_router.on('route:defaultAction', function (actions) {
      
-       // We have no matching route, lets display the home page 
-        var homeView = new HomeView();
-        homeView.render();
-    });
+    //    // We have no matching route, lets display the home page 
+    //     var homeView = new HomeView();
+    //     homeView.render();
+    // });
 
     // Unlike the above, we don't call render on this view as it will handle
     // the render call internally after it loads data. Further more we load it
@@ -33,6 +55,7 @@ define([
     Backbone.history.start();
   };
   return { 
-    initialize: initialize
+    initialize: initialize,
+
   };
 });
