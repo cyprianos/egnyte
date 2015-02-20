@@ -29,7 +29,7 @@
   	<script type="text/template" id="files-template">
 	  <thead>
 	    <tr class='header'>
-	      <th><input type="checkbox"></th>
+	      <th><input type="checkbox" <% print (selected ? "checked": "") %>></th>
 	      <th>
 	      	<button class="btn btn-warning" disabled>Rename</button>
 	      	<button class="btn btn-danger" disabled>Delete</button>

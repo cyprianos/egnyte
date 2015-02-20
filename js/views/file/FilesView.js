@@ -10,42 +10,40 @@ define([
 		id: "files",
 		template: '#files-template',
 		childView: FileView,
+		// onAfterRender: function() {
+			// var col = this.options.collection;
+			// console.log('cccc', this.$('th input')[0]);
+			
+		// },
 		initialize: function(options) {
-			var col = this.options.collection;
-			this.listenTo(col, 'change:selected', function(){
-				// if(col.isChecked()) {
-					this.$('th input').prop('checked', col.isChecked());
-				// } else {
-				// 	this.$el('th input').attr('ch')
-				// }
+			console.log(this.$el.find('th input'));
+
+			var collection = this.options.collection;
+			
+			this.listenTo(collection, 'change:selected', function(){
+					var checkboxAll = this.checkboxAll = this.$('th input');
+					checkboxAll.prop('checked', collection.isChecked());
 			});
-			// console.log('options',options)
-			// console.log(this.options);
-			// var collection = this.collection;
-			// this.listenTo(collection, 'change:selected', function() {
-			// 	var check = _.map(function(model){
-			// 		// return model.get('selected');
-			// 		console.log(model);
-			// 		return 1;
-			// 	});
-			// 	console.log(check);
-			// });
+
 		},
 		events: {
 			'click th input': 'toggleAll'
 		},
+		/*move to collection*/
 		toggleAll: function() {
-			var checked = this.$('th input').is(':checked');
-			var col = this.options.collection;
-			//isSelected
-			//var c = _.invoke(col.filter(function(){return true}), 'get', 'selected');
-			col.each(function(model){
+			var checked = this.$('th input').is(':checked'),
+				collection = this.options.collection;
+
+			collection.each(function(model){
 				model.save({'selected': checked });
 			});
+		},
+		serializeData: function() {
+			return {
+				selected:  this.options.collection.isChecked()
+
+			};
 		}
-		// appendHtml: function(cView, iView) {
-		// 	cView.$('tbody').append(iView().render());
-		// }
 	});
   return FilesView;
 });
