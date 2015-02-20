@@ -22,6 +22,7 @@
     "requirejs": null,
     "layoutmanager": null,
     "marionette": null,
-    "json2": "*"
+    "json2": "*",
+    "backbone.localstorage": "~1.1.16"
   }
 }

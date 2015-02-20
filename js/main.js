@@ -5,13 +5,12 @@ require.config({
     backbone: 'vendor/backbone-amd/backbone',
     layoutmanager: 'vendor/layoutmanager/backbone.layoutmanager',
     marionette: 'vendor/marionette/lib/core/backbone.marionette',
-
+    localstorage: 'vendor/backbone.localstorage/backbone.localStorage',
     'backbone.wreqr': 'vendor/backbone.wreqr/lib/backbone.wreqr',
     'backbone.babysitter': 'vendor/backbone.babysitter/lib/backbone.babysitter',
     templates: '../templates',
     json2: 'vendor/json2/json2'
   }
-
 });
 
 require([
@@ -20,13 +19,11 @@ require([
   'collections/files/Files'
 
 ], function(App, Files){
-  var dummyData = new Files([
-    {name: 'super plik 1'},
-    {name: 'super plik 2'},
-    {name: 'super plik 3'},
-  ]);
+  // var dummyData = new Files([
+  //   {name: 'super plik 1'},
+  //   {name: 'super plik 2'},
+  //   {name: 'super plik 3'},
+  // ]);
 
-  App.start({
-    files: dummyData
-  });
+  App.start();
 });

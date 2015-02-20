@@ -18,10 +18,11 @@ define([
         });
       }
     },
-    check: function() {
+    toggle: function() {
+      console.log('save');
       this.save({
-        selected: !this.get('selected')
-      });
+        selected:!this.get('selected')
+      })
     }
 
   });

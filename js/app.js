@@ -5,19 +5,29 @@ define([
   'underscore', 
   'backbone',
   'marionette',
+  'localstorage',
+  'collections/files/Files',
   'views/file/FilesView'
 
-], function($, JSON, _, Backbone, Marionette, FilesView){
+], function($, JSON, _, Backbone, Marionette, LocalStorage,Files, FilesView){
+    
+
     MyApp = new Marionette.Application();
     MyApp.addRegions({
       mainRegion: "#w"
-    })
-    MyApp.addInitializer(function(options) {
-      var filesView = new FilesView({
-        collection: options.files
-      });
-      MyApp.mainRegion.show(filesView);
-      Backbone.history.start();
     });
+    var files = new Files();
+    files.fetch({
+      success: function() {
+         MyApp.addInitializer(function() {
+          var filesView = new FilesView({
+            collection: files
+          });
+          MyApp.mainRegion.show(filesView);
+          Backbone.history.start();
+        });
+      }
+    });
+   
   return MyApp;
 });

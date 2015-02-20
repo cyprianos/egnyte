@@ -9,10 +9,13 @@ define([
 		template: '#file-template',
 		tagName: 'tr',
 		className: 'file',
-		model: File
-		// events: {
-		// 	'click': 'click'
-		// },
+		model: File,
+		events: {
+			'click input': 'select',
+		},
+		select: function() {
+			this.model.toggle();
+		}
 		// click: function() {
 		// 	console.log('asdasd');
 		// },
