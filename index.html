@@ -31,11 +31,11 @@
 	    <tr class='header'>
 	      <th><input type="checkbox" <% print (selected ? "checked": "") %>></th>
 	      <th>
-	      	<button class="btn btn-warning" disabled>Rename</button>
-	      	<button class="btn btn-danger" disabled>Delete</button>
+	      	<button class="btn btn-warning buttonRename" <% print (disabled ? "disabled": "") %>>Rename</button>
+	      	<button class="btn btn-danger buttonDelete" <% print (disabled ? "disabled": "") %>>Delete</button>
 	      </th>
 	      <th >
-	      	<button class="btn btn-success">New Folder</button>
+	      	<button class="btn btn-success buttonNewFolder">New Folder</button>
 	      </th>
 	    </tr>
 	  </thead>

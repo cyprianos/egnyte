@@ -15,19 +15,22 @@ define([
 			// console.log('cccc', this.$('th input')[0]);
 			
 		// },
+		ui: {
+			checkboxAll: 'th input[type="checkbox"]',
+			buttonNewFolder: 'button.newFolder',
+			buttonRename: 'button.rename',
+			buttonDelete: 'button.delete'
+		},
 		initialize: function(options) {
-			console.log(this.$el.find('th input'));
-
+			var that = this;
 			var collection = this.options.collection;
-			
 			this.listenTo(collection, 'change:selected', function(){
-					var checkboxAll = this.checkboxAll = this.$('th input');
-					checkboxAll.prop('checked', collection.isChecked());
+				this.ui.checkboxAll.prop('checked', collection.isChecked());
+				that.render();
 			});
-
 		},
 		events: {
-			'click th input': 'toggleAll'
+			'click th input[type="checkbox"]': 'toggleAll'
 		},
 		/*move to collection*/
 		toggleAll: function() {
@@ -39,9 +42,10 @@ define([
 			});
 		},
 		serializeData: function() {
+			var collection = this.options.collection;
 			return {
-				selected:  this.options.collection.isChecked()
-
+				selected: collection.isChecked(),
+				disabled: !(collection.someChecked())
 			};
 		}
 	});

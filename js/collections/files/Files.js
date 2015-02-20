@@ -11,6 +11,11 @@ define(['jquery',
 		isChecked: function() {
 			var c = _.invoke(this.filter(function(){return true}), 'get', 'selected');
 			return _.every(c, _.identity);
+		},
+		someChecked: function() {
+			var c = _.invoke(this.filter(function(){return true}), 'get', 'selected');
+			console.log('some',  _.some(c, _.identity));
+			return _.some(c, _.identity);
 		}
 	});
 	return FilesList;
