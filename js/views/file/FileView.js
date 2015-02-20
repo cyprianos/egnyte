@@ -2,12 +2,14 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'marionette'
-], function($, _, Backbone, Marionette){
+  'marionette',
+  'models/file/File'
+], function($, _, Backbone, Marionette, File){
 	var FilesView = Marionette.ItemView.extend({
 		template: '#file-template',
 		tagName: 'tr',
-		className: 'file'
+		className: 'file',
+		model: File
 		// events: {
 		// 	'click': 'click'
 		// },

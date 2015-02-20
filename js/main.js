@@ -24,8 +24,6 @@ require([
     {name: 'super plik 2'},
     {name: 'super plik 3'},
   ]);
-  
-
 
   App.start({
     files: dummyData

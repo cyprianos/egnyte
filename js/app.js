@@ -15,6 +15,7 @@ define([
         collection: options.files
       });
       MyApp.mainRegion.show(filesView);
+      Backbone.history.start();
     });
   return MyApp;
 });
