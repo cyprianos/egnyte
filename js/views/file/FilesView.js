@@ -10,7 +10,17 @@ define([
 		id: "files",
 		template: '#files-template',
 		childView: FileView,
-		initialize: function() {
+		initialize: function(options) {
+			var col = this.options.collection;
+			this.listenTo(col, 'change:selected', function(){
+				// if(col.isChecked()) {
+					this.$('th input').prop('checked', col.isChecked());
+				// } else {
+				// 	this.$el('th input').attr('ch')
+				// }
+			});
+			// console.log('options',options)
+			// console.log(this.options);
 			// var collection = this.collection;
 			// this.listenTo(collection, 'change:selected', function() {
 			// 	var check = _.map(function(model){
@@ -22,16 +32,16 @@ define([
 			// });
 		},
 		events: {
-			'click input': 'selectAll'
+			'click th input': 'toggleAll'
 		},
-		selectAll: function() {
-			// console.log('all',arguments, this.collection);
-			// _.each(this.collection, function(item) {
-			// 	item.set('enable');
-			// });
-		},
-		deselect: function() {
-
+		toggleAll: function() {
+			var checked = this.$('th input').is(':checked');
+			var col = this.options.collection;
+			//isSelected
+			//var c = _.invoke(col.filter(function(){return true}), 'get', 'selected');
+			col.each(function(model){
+				model.save({'selected': checked });
+			});
 		}
 		// appendHtml: function(cView, iView) {
 		// 	cView.$('tbody').append(iView().render());
