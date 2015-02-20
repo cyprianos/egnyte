@@ -19,7 +19,15 @@ define([
     var files = new Files();
     files.fetch({
       success: function() {
-         MyApp.addInitializer(function() {
+        if(files.length===0) {
+          files = new Files([
+            {name: 'super plik 1'},
+            {name: 'super plik 2'},
+            {name: 'super plik 3'},
+          ]);
+        }
+        
+        MyApp.addInitializer(function() {
           var filesView = new FilesView({
             collection: files
           });
