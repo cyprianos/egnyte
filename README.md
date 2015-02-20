@@ -1,4 +1,4 @@
-# Example Backbone Marionette demonstration
+# Example Backbone Marionette demo
 
 run `bower install` for install frontend dependencies
 
@@ -10,3 +10,5 @@ run `bower install` for install frontend dependencies
 
 ##FUTURE DEVELOPMENT
 -	unit testing(Mocha)
+-	expressjs server
+-	Mongoose integration

@@ -8,7 +8,8 @@ require.config({
 
     'backbone.wreqr': 'vendor/backbone.wreqr/lib/backbone.wreqr',
     'backbone.babysitter': 'vendor/backbone.babysitter/lib/backbone.babysitter',
-    templates: '../templates'
+    templates: '../templates',
+    json2: 'vendor/json2/json2'
   }
 
 });

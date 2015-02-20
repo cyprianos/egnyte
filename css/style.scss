@@ -1,40 +1,45 @@
 body {
   background: #ebebeb;
-  width: 100%;
-  padding-top: 60px; }
+  width:100%;
+  padding-top:60px;
+
+}
 
 #w {
   width: 96%;
   margin: auto;
   min-height: 500px;
   background: #fff;
-  padding: 0 2%; }
+  padding: 0 2%;
+}
 
 #logo {
-  padding: 20px; }
-
-h1 {
+   padding: 20px;
+}
+h1{
   padding: 0;
-  margin: 0; }
-
+  margin: 0;
+}
 #page {
   border-top: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
   min-height: 400px;
-  overflow: hidden; }
+  
+  overflow: hidden;
+}
 
-#page {
-  width: 96%; }
+#page  {
+  width: 96%;
+}
 
 #page .main {
   display: block;
-  position: relative;
+  position:relative;
   top: 0px;
   left: 0px;
   padding: 0px;
   margin: 0px;
   width: 80%;
   float: left;
-  overflow: hidden; }
-
-/*# sourceMappingURL=style.css.map */
+  overflow: hidden;
+}
