@@ -21,20 +21,20 @@
 
   <div id="w">
   	
-  </div> 
-  <script type="layout" id="layout">
-	<div id="logo">
-		<h1>Egnyte</h1>
-	</div>
+  </div>
+  	<script type="text/template" id="files-template">
+	  <thead>
+	    <tr class='header'>
+	      <th>Name</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  </tbody>
+	</script>
 
-	<div id="list"></div>
-  </script>
-  <script type="template" id="tpl-list">
-  	<ul>
-  		<li>el1</li>
-  		<li>el2</li>
-  	</ul>
-  </script>
+	<script type="text/template" id="file-template">
+	  <td><%= name ></td>
+	</script>
   <script data-main="js/main" src="js/vendor/requirejs/require.js"></script>
 </body>
 </html>

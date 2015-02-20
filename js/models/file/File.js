@@ -14,7 +14,7 @@ define([
     initialize: function() {
       if(!this.get('name')) {
         this.set({
-          'name', this.defaults().name
+          'name': this.defaults().name
         });
       }
     },

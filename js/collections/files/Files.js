@@ -1,7 +1,7 @@
 define(['jquery',
 	'underscore',
 	'backbone',
-	'model/file/FileModel'
+	'models/file/File'
 
 ], function($, _, Backbone, File){
 	var FilesList = Backbone.Collection.extend({
@@ -9,4 +9,3 @@ define(['jquery',
 	});
 	return FilesList;
 });
-

@@ -3,19 +3,18 @@ define([
   'jquery', 
   'underscore', 
   'backbone',
-  'router',
-  'layoutmanager',
-], function($, _, Backbone, Router, Layout){
-  var initialize = function(){
-    Backbone.Layout.configure({
-      manage:true
-    });
-    // console.log(Layout);
-    // Pass in our Router module and call it's initialize function
-    Router.initialize();
-  };
+  'views/file/FilesView'
 
-  return { 
-    initialize: initialize
-  };
+], function($, _, Backbone, FilesView){
+    MyApp = new Backbone.Marionette.Application();
+    MyApp.addRegions({
+      mainRegion: "#w"
+    })
+    MyApp.addInitializer(function(options) {
+      var filesView = new FilesView({
+        collection: options.files
+      });
+      MyApp.mainRegion.show(filesView);
+    });
+  return MyApp;
 });

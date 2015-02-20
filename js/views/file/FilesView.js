@@ -2,11 +2,16 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/file/FilesTemplate.html',
-   'layoutmanager'
-], function($, _, Backbone, tpl, LayoutManager){
-	var FilesView = Backbone.View.extend({
-		template: '#tpl-list'
+  'views/file/FileView'
+], function($, _, Backbone, FileView){
+	var FilesView = Backbone.Marionette.CompositeView.extend({
+		tagName: 'table',
+		id: "files",
+		template: '#files-template',
+		itemView: FileView,
+		appendHtml: function(cView, iView) {
+			cView.$('tbody').append(iView.el);
+		}
 		// events: {
 		// 	'click': 'click'
 		// },

@@ -2,10 +2,12 @@ define([
   'jquery',
   'underscore',
   'backbone',
-   'layoutmanager'
-], function($, _, Backbone, tpl, LayoutManager){
-	var FilesView = Backbone.View.extend({
-		tag: 'li'
+  'marionette'
+], function($, _, Backbone, Marionette){
+	var FilesView = Marionette.ItemView.extend({
+		template: '#file-template',
+		tagName: 'tr',
+		className: 'file'
 		// events: {
 		// 	'click': 'click'
 		// },
