@@ -1,6 +1,6 @@
 nohup.out
 node_modules
-js/vendor
+app/js/vendor
 .sass-cache
 *.swo
 *.swp
